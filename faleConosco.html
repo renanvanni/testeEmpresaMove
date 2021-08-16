@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Ativação do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <!-- /Ativação do Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"></script>
+
+    <!-- Ativação do CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- /Ativação do CSS -->
+
+    <!-- Ativação de icones -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- /Ativação de icones -->
+</head>
+
+<body id="body-pd">
+
+    <!-- Menu -->
+    <header>
+        <div class="logo-text bg-dark d-flex justify-content-center">
+            <div class="logo-text-span mr-5" style="color: white;">
+                <h4>Microsoft Power BI Embedded Playground</h4>
+            </div>
+        </div>
+    </header>
+    <div class="nav-side-menu">
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <div class="menu-list">
+            <ul id="menu-content" class="menu-content collapse out">
+                <h4 class="ml-2 pt-2 bg-dark">Dashboard</h4>
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a href="relatorioA.html"><i class="fas fa-tachometer-alt fa-lg"></i> Relatório A</a>
+                </li>
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a href="relatorioB.html"><i class="fas fa-tachometer-alt fa-lg"></i> Relatório B </a>
+                </li>
+            </ul>
+            <li>
+
+                <a href="faleConosco.html">
+                    <i class="fa fa-users fa-lg"></i> Fale conosco
+                </a>
+            </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /Menu -->
+
+    <h1 class="center" style="margin-left: 400pt;">Entre em contato:</h1>
+
+    <div class="container espaco mb-50">
+        <div class="container col-md-5 justify-content-center">
+            <form>
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" onkeyup="validaNome()">
+                <div id="txtNome"></div>
+                <br>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" onkeyup="validaEmail()">
+                <div id="txtEmail"></div>
+                <br>
+                <label for="assunto">Assunto:</label><br>
+                <textarea name="assunto" id="assunto" cols="60" rows="10" onkeyup="validaAssunto()"></textarea>
+                <div id="txtAssunto"></div>
+                <br>
+                <button onclick="enviar()" class="botao">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+    <!-- Exemplo de endereço comercial -->
+    <div class="container espaco" style="margin-left: 150pt;">
+        <p>Av. Paulista, 1000</p>
+        <p>São Paulo - SP</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0981691353495!2d-46.65412628533743!3d-23.56491746760805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5994f2e15a7d%3A0xdeb92126793e5e90!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1623861466894!5m2!1spt-BR!2sbr"
+            width="400" height="250" style="border: 0;" allowfullscreen="" loading="lazy" id="mapa"
+            onmousemove="mapaZoom()" onmouseout="mapaNormal()"></iframe>
+    </div>
+    <!-- Exemplo de endereço comercial -->
+
+    <hr>
+    <footer>
+        <div class="container" style="margin-left: 500pt;">
+            <a href="https://www.facebook.com/" target="_blank" style="font-size: xx-large;">
+                <i class="fa fa-facebook-square icone" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/renan-gon%C3%A7alves-vanni-268b08168/" target="_blank" style="font-size: xx-large;">
+                <i class="fa fa-linkedin-square icone" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" style="font-size: xx-large;">
+                <i class="fa fa-instagram icone" aria-hidden="true"></i>
+            </a>
+        </div>
+        <p style="margin-left: 400pt;">
+            Todos os direitos reservados para: Renan Gonçalves Vanni &copy;
+        </p>
+    </footer>
+
+    <!-- Ativação do JS -->
+    <script src="assets/js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <!-- /Ativação do JS -->
+
+    <!-- Ativação do PowerBI -->
+    <script src="/powerbi-client/dist/powerbi.js"></script>
+    <!-- /Ativação do PowerBI -->
+</body>
+
+</html>
